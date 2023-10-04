@@ -3,12 +3,13 @@ import sqlite3
 con = sqlite3.connect("library-data.db")
 cur = con.cursor()
 
-# Define table
+# Define tables
 cur.execute("CREATE TABLE books(id, author, yearpublished, title, genre, state)")
+cur.execute("CREATE TABLE lender(id, name, title, datelending)")
 
 # Data insertion
 # First define Data
-data = [
+book_data = [
     (1, "Harper Lee", 1960, "To Kill a Mockingbird", "Fiction", True),
     (2, "J.K. Rowling", 1997, "Harry Potter and the Philosopher's Stone", "Fantasy", True),
     (3, "George Orwell", 1949, "1984", "Dystopian", True),
@@ -24,5 +25,14 @@ data = [
     (10, "Khaled Hosseini", 2003, "The Kite Runner", "Historical Fiction", True),
 ]
 
-cur.executemany('INSERT INTO books VALUES(?,?,?,?,?,?)', data)
-con.commit()  # Commit transaction after excuting INSERT
+lending_data = [
+    (1, "Aske", "Murder on the Orient Express", "03-10-23"),
+    (1, "Yaser", "The Kite Runner", "03-10-23"),
+    (3, "Noah", "The Lord of the Rings", "03-10-23"),
+    (4, "Tobias", "One Hundred Years of Solitude", "03-10-23"),
+    (5, "Kasper", "Pride and Predujice", "03-10-23"),
+]
+
+cur.executemany('INSERT INTO lender VALUES(?,?,?,?)', lending_data)
+cur.executemany('INSERT INTO books VALUES(?,?,?,?,?,?)', book_data)
+con.commit()  # Commit transaction after executing INSERT
