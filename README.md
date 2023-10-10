@@ -1,4 +1,4 @@
-# projekt-database
+# Projekt-database
 
 ## Opgavebeskrivelse
 Krav til projektet:
@@ -13,9 +13,9 @@ Den 25. oktober skal I aflevere jeres synopsis. I får modulet den 24. oktober t
 
 ## Databaseforklaring
 Biblioteksdatabase:
-Vi laver 3 tabeler:
-Tabel 1 vil have følgende kolonner: Bog_id, Bog_Tittel, Forfatter, Genre, År og Status (Udlånt eller tilgængeligt)
-Tabel 2 vil have følgende kolonner: Lånere_id, Lårnere_Navn, Bog_Tittel og Udlånt_Dato
+Vi laver 3 tabeller:
+Tabel 1 vil have følgende kolonner: Bog_id, Bog_Titel, Forfatter, Genre, År og Status (Udlånt eller tilgængeligt)
+Tabel 2 vil have følgende kolonner: Lånere_id, Lånere_Navn, Bog_Titel og Udlånt_Dato
 Tabel 3 vil have følgende kolonner: Lånere_id og Bog_id
 
 

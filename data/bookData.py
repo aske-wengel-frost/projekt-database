@@ -4,8 +4,8 @@ con = sqlite3.connect("library-data.db")
 cur = con.cursor()
 
 # Define tables
-cur.execute("CREATE TABLE books(id, author, yearpublished, title, genre, state)")
-cur.execute("CREATE TABLE lender(id, name, title, datelending)")
+cur.execute("CREATE TABLE books(id INTEGER PRIMARY KEY, author, yearpublished, title, genre, state)")
+cur.execute("CREATE TABLE lender(id INTEGER PRIMARY KEY, name, title, datelending)")
 
 # Data insertion
 # First define Data
@@ -27,7 +27,7 @@ book_data = [
 
 lending_data = [
     (1, "Aske", "Murder on the Orient Express", "03-10-23"),
-    (1, "Yaser", "The Kite Runner", "03-10-23"),
+    (2, "Yaser", "The Kite Runner", "03-10-23"),
     (3, "Noah", "The Lord of the Rings", "03-10-23"),
     (4, "Tobias", "One Hundred Years of Solitude", "03-10-23"),
     (5, "Kasper", "Pride and Predujice", "03-10-23"),
